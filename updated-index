@@ -1,0 +1,209 @@
+<!DOCTYPE HTML>
+<!--
+	Theory by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Petfinder API "How-To" Guide</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body>
+
+	<!-- Header -->
+		<header id="header">
+			<div class="inner">
+				<a href="index.html" class="logo">Theory</a>
+				<nav id="nav">
+					<a href="https://www.petfinder.com/developers/api-key">Petfinder's Developer Page</a>
+					<a href="https://www.petfinder.com/api-terms-of-service/">API Terms of Service</a>
+					<a href="https://www.petfinder.com/">Petfinder.com</a>
+				</nav>
+				<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+			</div>
+		</header>
+
+	<!-- Banner -->
+		<section id="banner">
+			<h1>Petfinder API "How-To" Guide</h1>
+			<p>How to use Petfinder's API library</p>
+		</section>
+
+	<!-- Zero -->
+		<section id="zero" class="wrapper special">
+			<div class="inner align-center">
+				<header>
+					<h2>Introduction</h2>
+				</header>
+					<h3>The Purpose of This Guide</h3>
+					<p>This guide will take you through Petfinder's API and will teach you how to access its data for your own application. We will begin with some example applications to give you ideas of how the API can be used and why you might want to learn how to use it. By the end of this tutorial, you will understand what the API is, how to set it up, how to send a request, and how to interpret the data you will be receiving. You will soon be on your way to using the Petfinder API for your own application! I will be breaking down each part of the official documentation found on Petfinder's website and will cover it in detail below; but if you would like to take a look at it first, you can find it by clicking the button below.</p>
+					<a href="https://www.petfinder.com/developers/api-docs" class="button special">Official Petfinder API doc</a>
+					<br><br>
+					<p>Before beginning this tutorial, it is necessary that you have a basic understanding of Javascript and HTML. There are many great online resources if you are unfamiliar with either of those. I would strongly recommend checking some of them out before returning to this API guide.
+					<br><br>
+					A few great Javascript tutorials that I would recommend are <a href="https://www.w3schools.com/js/">W3Schools' JS tutorial</a> and <a href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics">Mozilla Developer Network's JS tutorial</a>.
+					As for HTML tutorials, <a href="https://www.w3schools.com/html/html_basic.asp">W3Schools</a> also has a great tutorial, as does <a href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics">Mozilla Developer Network</a>.
+			</div>
+		</section>
+
+	<!-- One -->
+	<section id="one" class="wrapper style1 special">
+		<div class="inner">
+			<header class="align-center">
+				<h2>Example Applications Using Petfinder's API</h2>
+			</header>
+			<div class="flex flex-3">
+				<article>
+					<header class="align-center">
+						<h3>Oakland Animal Services</h3>
+					</header>
+					<p class="align-center"><a href="http://www.oaklandanimalservices.org/"><img src="images/oaklandanimalservices.jpg"></a><br/>
+					<a href="http://www.oaklandanimalservices.org/">Oakland Animal Services</a> uses the API to customize a scrolling display of adoptable pets from their shelter. It is then shown on their website as well as on the TV in the shelter's lobby!</p>
+				</article>
+				<article>
+					<header class="align-center">
+						<h3>Belly Rubs <br/>Basset Rescue</h3>
+					</header>
+					<p class="align-center"><a href="https://bellyrubs.org/"><img src="images/BellyRubsBasset.jpg" width="75%" height="75%"></a>
+					<br/><a href="https://bellyrubs.org/">Belly Rubs Basset Rescue</a> uses Petfinder's API to populate the list of available dogs on its website inside of another content management system, Joomla!</p>
+				</article>
+				<article>
+					<header class="align-center">
+						<h3>Golden Retriever Rescue <br/>of Atlanta</h3>
+					</header>
+					<p class="align-center"><a href="https://www.grra.com/"><img src="images/GoldenRetrieverRescue.jpg" width="90%" height="90%"></a>
+					<br/><a href="https://www.grra.com/">Golden Retriever Rescue of Atlanta</a> uses the API to populate the "available dogs" page on their website. Using the API allows for an automated way for them to publish their information in multiple places.</p>
+				</article>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- Two -->
+		<section id="two" class="wrapper">
+			<div class="inner align-center">
+				<header class="align-center">
+				<h2>What are APIs?</h2>
+				</header>
+					<p>API stands for Application Programming Interface and it serves as an interface between different programs, allowing them to communicate and interact with each other. Programmers make APIs to give developers access to their data and resources. For a more comprehensive definition, <a href="https://en.wikipedia.org/wiki/Application_programming_interface">Wikipedia </a>has a great explanation of APIs.</p>
+					<p>And for visual learners, here is a FANTASTIC animated answer to the question "What is an API?"
+					<br><iframe width="560" height="315" src="https://www.youtube.com/embed/s7wmiS2mSXY" frameborder="0" allowfullscreen></iframe>
+					</p>
+				<header class="align-center">
+				<h2>What does Petfinder's API do?</h2>
+				</header>
+					<p>Petfinder's API has nine methods that</p>
+			</div>
+		</section>
+	<!-- Three -->
+		<section id="three" class="wrapper style1 special">
+			<div class="inner align-center">
+				<header>
+					<h2>Let's Get Started</h2>
+				</header>
+					<p>To access any information from Petfinder's database, you must first obtain an API key. An API key is a unique code used to identify the calling program, the developer, or the user. It is passed in by computer programs when an API is called and can track how the API is being used. If the API is being used maliciously or the terms of service are being violated, the user can be tracked down and the license can be revoked. Take a look at Petfinder's API Terms of Service before obtaining your key.</p>
+					<a href="https://www.petfinder.com/api-terms-of-service/" class="button special">API Terms of Service</a>
+					<br><br>
+					<h3>How To Get a Key</h3>
+					<p>Before you can obtain a key, you must create an account with Petfinder.com</p>
+					<a href="https://www.petfinder.com/user/register?next=https://www.petfinder.com/developers/api-key" class="button special">Register</a>
+					<br><br>
+					<p>Great! Now that you are logged in, you can request an API key. When you arrive at the page, just fill in the fields, read the terms, check the box that says "I have read and agreed to the terms of service", and click the orange button to request a key!
+					<br><br>
+					<img src="images/requestKey.jpg"/>
+					<br><br>
+					</p>
+					<a href="https://www.petfinder.com/developers/api-key" class="button special">Get an API Key</a>
+					<br><br>
+					<p>If you have successfully obtained a key, you will be directed to a page "For Developers" where you can view your API information. Your API Key will be shown along with your API Secret. The secret is used to sign requests that require authentication. We will not be using the secret in this tutorial, but it is there if you need it down the road. The page will look like this:
+					<br><br>
+					<img src="images/YourAPI.jpg">
+			</div>
+		</section>
+
+	<!-- Four -->
+		<section id="four" class="wrapper special">
+			<div class="inner align-center">
+				<header class="align-center">
+					<h2>Sending a Request</h2>
+				</header>
+					<p>This is how to send a request. I'm gonna break down a request.</p>
+					<p>Here is some example code</p>
+			<script async src="https://jsfiddle.net/stephannpey/e29khp6y/embed/"></script>
+				
+				<div class="inner">
+					<article>
+						<div class ="align-center">
+							<img src="images/pic01.jpg" alt="Pic 01" />
+						</div>
+						<header class="align-center">
+							<h3>Praesent placerat magna</h3>
+						</header>
+						<p>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor lorem ipsum.</p>
+						<footer class="align-center">
+							<a href="#" class="button special">More</a>
+						</footer>
+					</article>
+				</div>
+			</div>
+		</section>
+
+	<!-- Five -->
+		<section id="five" class="wrapper style1 special">
+			<div class="inner">
+				<header>
+					<h2>Interpreting the Response</h2>
+				</header>
+				<p>Here I will break down the response. Here lies some sample code along with my soul.</p>
+					<div class="align-center">
+						<img src="images/pic01.jpg" alt="Pic 01" />
+					</div>
+			</div>
+		</section>
+
+	<!-- Six -->
+		<section id="six" class="wrapper special">
+			<div class="inner">
+				<header class="align-center">
+					<h2>Petfinder's 9 APIs</h2>
+					<p>These are all of the APIs in the library.</p>
+				</header>
+				<div class="inner">
+					<article>
+						<div class ="align-center">
+							<img src="images/pic01.jpg" alt="Pic 01" />
+						</div>
+						<header class="align-center">
+							<h3>Praesent placerat magna</h3>
+						</header>
+						<p>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor lorem ipsum.</p>
+						<footer class="align-center">
+							<a href="#" class="button special">More</a>
+						</footer>
+					</article>
+				</div>
+			</div>
+		</section>
+
+	<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<div class="flex">
+					<div class="copyright">
+						&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/skel.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
